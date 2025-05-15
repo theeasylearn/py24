@@ -1,0 +1,16 @@
+decision making (if or if else)
+1) write a program to findout whether given name start with vowel or not 
+   input : Ankit 
+    name start with vowel 
+   input : Nihar 
+    name does not start with vowel 
+
+2) write a program to findout bigger triangle from given 2 triangle's length and base 
+
+3) write a program to findout whether businessman has earned profit or did loss from given purchase and sales price 
+
+4) write a program to findout whether your should by laptop from london or from new york. based on laptop price display in given currency from indian person point of view 
+
+
+
+
