@@ -12,5 +12,23 @@ decision making (if or if else)
 4) write a program to findout whether your should by laptop from london or from new york. based on laptop price display in given currency from indian person point of view 
 
 
+4) write a program to accept month number from user and display name of the month
 
 
+5) write a program to accept day of week and then display divas and ratri choghadiya (switch statements)
+
+7) write a program to accept birth date and month from user. decide zodiac sign from below table 
+Aries: March 21–April 19
+Taurus: April 20–May 20
+Gemini: May 21–June 21
+Cancer: June 22–July 22
+Leo: July 23–August 22
+Virgo: August 23–September 22
+Libra: September 23–October 22
+Scorpio: October 24–November 21
+Sagittarius: November 22–December 21
+Capricorn: December 22–January 19
+Aquarius: January 20–February 18
+Pisces: February 19–March 20
+
+7) write a program to check whether given year is leap year or not. 
