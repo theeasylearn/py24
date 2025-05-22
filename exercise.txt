@@ -40,3 +40,16 @@ Pisces: February 19–March 20
    1    8   27  64  .....    1000
    0    1   1   2   3   5   8   13  .... 100
    
+9) write a program to findout only compound interest of given amount, rate, year 
+10) write a program to findout power of given base and exponent 
+
+11) write a program to make sum of all digit in given number 
+input : 12345 output : 15
+
+12) write a program to findout whether given number is palindrome 
+input : 12321 output 12321 this is palindrome
+input : 12345 output 54321 this is not palindrome
+
+13) write a program to display given amount into words 
+input : 12345 
+output one two three four five 
