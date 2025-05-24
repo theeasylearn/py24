@@ -53,3 +53,11 @@ input : 12345 output 54321 this is not palindrome
 13) write a program to display given amount into words 
 input : 12345 
 output one two three four five 
+
+for loop 
+-------------------------------------------------------------------
+write a program to findout minimum marks & subject name and maximum marks and subject name from given dictionary 
+marks = {"Math": 88, "English": 75, "Science": 92, "History": 80, "Geography": 78, "Computer": 95}
+
+# write a program to count words, vowel, consent,digit and symbols in given string 
+
