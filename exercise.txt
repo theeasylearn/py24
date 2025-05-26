@@ -61,3 +61,22 @@ marks = {"Math": 88, "English": 75, "Science": 92, "History": 80, "Geography": 7
 
 # write a program to count words, vowel, consent,digit and symbols in given string 
 
+nested loop 
+----------------------------
+    *
+   **
+  ***
+ ****
+*****
+
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+
+    1
+   0 1
+  1 0 1
+ 0 1 0 1
+0 1 0 1 0
