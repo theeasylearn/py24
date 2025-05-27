@@ -52,6 +52,8 @@ input : 12345 output 54321 this is not palindrome
 
 13) write a program to display given amount into words 
 input : 12345 
+
+reverse : 54321
 output one two three four five 
 
 for loop 

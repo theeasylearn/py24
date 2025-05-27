@@ -2,6 +2,9 @@
     write a program to findout reverse of given no 
     input : 1234 
     output : 4321
+    
+    12321
+    12321
     steps 
     -----------------------
     1   create variable number,reminder,reverse = 0 
