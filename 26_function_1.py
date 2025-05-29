@@ -10,7 +10,8 @@ def getSquare(number):
 # Without return value without argument
 def printLine():
     print("*" * 125)
-    
+    return None 
+
 printLine() #calling function printline
 a = int(input("Enter value for A"))
 a_square = getSquare(a) #calling function
