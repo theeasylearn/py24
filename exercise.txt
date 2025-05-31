@@ -87,3 +87,9 @@ nested loop
 functions 
 1) function that returns Indian Rupees value in Dollar, Pound, Yen, Euro
 2) create keyword arguments function that 4 arguments. father name, mother name, brother name and sister name and display it with greet them with suitable prefix 
+
+recursion 
+------------------
+1) write a program to convert given number to octal number system.
+2) write a program to findout factorial of given number.
+3) write a program to convert given number to hexadecimal number system.
