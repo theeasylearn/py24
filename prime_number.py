@@ -15,14 +15,15 @@
         stop program 
     8) increase divisor by 1
 '''
-number = int(input("enter number")) # 10
-divisor = 2
-while divisor<number:
-    remainder = number % divisor
-    if remainder==0:
-        print('this is not prime number')
-        break
-    divisor=divisor + 1
-if number==divisor:
-    print('it is prime number')
-
+def isPrime(number):
+    divisor = 2
+    while divisor<number:
+        remainder = number % divisor
+        if remainder==0:
+            return False
+        divisor=divisor + 1
+    if number==divisor:
+        return True
+# number = int(input("enter number")) # 10
+# result = isPrime(number)
+# print(result)
