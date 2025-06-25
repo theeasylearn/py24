@@ -98,3 +98,10 @@ exception
 ---------------
 write a program to accept 6 digit otp from user. if user give correct otp(123456), display message login successful and if user given incorrect otp. display message invalid login attempt. user can make maximum 5 attempt (use simple user defined exception)
 
+map 
+----------------------
+create a python program to display on asian countries from list of countries using map function 
+
+Filter 
+
+create a python program to filter only pincode of gujarat cities from list of pincodes of all over india. 
