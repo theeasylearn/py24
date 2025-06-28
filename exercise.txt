@@ -105,3 +105,17 @@ create a python program to display on asian countries from list of countries usi
 Filter 
 
 create a python program to filter only pincode of gujarat cities from list of pincodes of all over india. 
+
+OOP
+-------------------------------------
+Create class to accept Player Detail 
+    Name 
+    Match 
+    runs 
+    ball
+    average 
+    fifty
+    centuries
+    fity_rate 
+    century_rate 
+    
