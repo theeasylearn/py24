@@ -19,7 +19,7 @@ class MarriageHall(Square,Rectangle):
     def getArea(self):
         area = Square.getArea(self) + Rectangle.getArea(self)
         return area    
-    
+
 size = 100
 length = 10 
 width = 20
