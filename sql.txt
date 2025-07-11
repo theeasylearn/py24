@@ -1,0 +1,40 @@
+how to create table?
+----------------------
+create table <tablename>(
+    fieldname datatype(size) constraint,
+    fieldname datatype(size) constraint,
+    fieldname datatype(size) constraint
+);
+
+create table category(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar(64) unique not null,
+    photo varchar(255),
+    inserted_at timestamp DEFAULT CURRENT_TIMESTAMP
+);
+
+how to insert new row into table?
+1st method
+insert into <tablename> values (value1,value2,value3);
+
+example
+insert into category values (0,'Mobile','mobile.jpg',CURRENT_TIMESTAMP);
+insert into category values (NULL,'Laptop','laptop.jpg',CURRENT_TIMESTAMP);
+
+2nd method
+insert into <tablename> (fieldname,fieldname2,fieldname3) values (value1,value2,value3);
+insert into category(name,photo) values('AC','AC.jpg')
+
+how to delete row?
+------------------------
+delete from <tablename> where condition
+
+delete all row from table 
+delete from category
+
+delete rows as per condition 
+delete categories where name is Electronics
+delete from category where name='Electronics'
+
+delete categories where id is below 7
+delete from category where id<7
