@@ -38,3 +38,63 @@ delete from category where name='Electronics'
 
 delete categories where id is below 7
 delete from category where id<7
+----------------------------------------------------------------
+how to update existing row in table?
+syntax
+update <tablename> set fieldname=value, fieldname2=value, fieldname3 = value where condition
+
+update table category change value of the category whose id is 7, new value of name should be home appliences and photo should be home_appliences.jpg 
+
+update category set name='home appliences', photo='home_appliences.jpg' where id= 7
+
+update table category set photo = null where id is above 20 
+update category set photo=null where id>20
+
+
+how to empty table and reset PRIMARY KEY?
+--------------------------------------------------
+truncate table <tablename>
+truncate table category
+
+how to remove table?
+drop table <tablename>
+drop table category
+
+how to fetch data from table?
+-------------------------------------------------------------
+
+syntax?
+-------------------------------------------------------------
+SELECT *|FIELDLIST|FUNCTION FROM <TABLENAME> [WHERE CONDITION] [GROUP BY FIELDNAME] [HAVING FUNCTION] [ORDER BY FIELDNAME] [LIMIT]
+
+how to fetch all fields & all rows from table 
+---------------------------------------------
+fetch everthing from customers table 
+select * from customers
+
+fetch only required/selected fields & all rows from table 
+fetch customerNumber,customerName,city,state,country from customers table 
+select customerNumber,customerName,city,state,country from customers
+
+fetch only required/selected fields & rows as per condition from table 
+fetch customerNumber,customerName,city,state,country from customers table of those cusotmers who are from usa 
+select customerNumber,customerName,city,state,country from customers where country='usa'
+
+fetch customerNumber,customerName,city,state,country from customers table of those cusotmers who are from usa or france or Norway
+
+select customerNumber,customerName,city,state,country from customers where country='usa' or country='france' or country='Norway'
+
+or 
+select customerNumber,customerName,city,state,country from customers where country in ('usa','france','Norway')
+
+
+fetch customerNumber,customerName,city,state,country from customers table of those cusotmers is from usa, state nv and city las vegas 
+
+select customerNumber,customerName,city,state,country from customers where country='usa' and state='nv' and city = 'las vegas'
+
+fetch customerNumber,customerName,creditlimit of those customers whose creditlimit is between 100000 and 500000
+
+select customerNumber,customerName,creditlimit from customers where creditlimit>=100000 and creditlimit<=500000
+
+or 
+select customerNumber,customerName,creditlimit from customers where creditlimit between 100000  and 500000 
