@@ -77,10 +77,10 @@ fetch customerNumber,customerName,city,state,country from customers table
 select customerNumber,customerName,city,state,country from customers
 
 fetch only required/selected fields & rows as per condition from table 
-fetch customerNumber,customerName,city,state,country from customers table of those cusotmers who are from usa 
+fetch customerNumber,customerName,city,state,country from customers table of those customers who are from usa 
 select customerNumber,customerName,city,state,country from customers where country='usa'
 
-fetch customerNumber,customerName,city,state,country from customers table of those cusotmers who are from usa or france or Norway
+fetch customerNumber,customerName,city,state,country from customers table of those customers who are from usa or france or Norway
 
 select customerNumber,customerName,city,state,country from customers where country='usa' or country='france' or country='Norway'
 
@@ -88,7 +88,7 @@ or
 select customerNumber,customerName,city,state,country from customers where country in ('usa','france','Norway')
 
 
-fetch customerNumber,customerName,city,state,country from customers table of those cusotmers is from usa, state nv and city las vegas 
+fetch customerNumber,customerName,city,state,country from customers table of those customers is from usa, state nv and city las vegas 
 
 select customerNumber,customerName,city,state,country from customers where country='usa' and state='nv' and city = 'las vegas'
 
@@ -97,4 +97,79 @@ fetch customerNumber,customerName,creditlimit of those customers whose creditlim
 select customerNumber,customerName,creditlimit from customers where creditlimit>=100000 and creditlimit<=500000
 
 or 
+
 select customerNumber,customerName,creditlimit from customers where creditlimit between 100000  and 500000 
+
+fetch those customers name whose name contains wheels at anywhere 
+
+select customerName from customers where customerName like '%wheels%'
+
+fetch those customers name whose name contains wheels at begining  
+
+select customerName from customers where customerName like 'wheels%'
+
+fetch those customers name whose name contains wheels at end   
+select customerName from customers where customerName like '%wheels'
+
+
+Aggrigate functions
+--------------------------
+Aggrigate functions are built in functions in mysql which work upon numeric field and always return single value. 
+
+sum 
+sum() Aggrigate function return sum of given numeric field 
+findout total payment amount from payment table 
+select sum(amount) from payments
+
+average 
+avg() Aggrigate function return average of given numeric field 
+findout average payment amount from payment table 
+select avg(amount) from payments
+
+
+count 
+count() function return total number of rows as per condition 
+count total no of payments received so far. 
+select count(amount) from payments
+
+minimum value 
+min() function return minimum (smallest) value of given field 
+select min(amount) from payments
+
+maximum value 
+max() function return maximum (largest) value of given field 
+select max(amount) from payments
+
+count how many customers from usa country. 
+select count(*) 'total' from customers where country='usa'
+
+count how many customers from each country. 
+select country,count(*) 'total' from customers group by country;
+
+
+findout total payment amount and no of payments paid by each and every customers
+
+select customerNumber,sum(amount) 'total payment',count(*) 'no of payments' from payments group by customerNumber;
+
+findout total payment amount of those customers who has paid less then 100000 total 
+
+select customerNumber,sum(amount) 'total payment' from payments group by customerNumber having sum(amount)<100000;
+
+get list of country where there are only 1 customers
+    select count(*),country from customers group by country having count(*)<=1
+
+fetch customerNumber,customerName,city,state,country in ascending order of customerName wise 
+SELECT customerNumber,customerName,city,state,country FROM `customers` order by customerName
+
+fetch customerNumber,customerName,city,state,country in descending order of customerName wise 
+SELECT customerNumber,customerName,city,state,country FROM `customers` order by customerName desc
+
+fetch customerNumber,customerName,city,state,country in ascending order of country wise then state wise, city wise 
+
+SELECT customerNumber,customerName,city,state,country FROM `customers` order by country,state,city
+
+fetch 1st 50 customers data name wise 
+select * from customers order by customerName limit 0,50
+
+fetch next 50 customers data name wise 
+select * from customers order by customerName limit 51,50
