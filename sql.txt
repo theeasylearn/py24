@@ -173,3 +173,38 @@ select * from customers order by customerName limit 0,50
 
 fetch next 50 customers data name wise 
 select * from customers order by customerName limit 51,50
+-------------------------------------------------------------------
+what is join?
+join is one type of sql command which will fetch data from multiple tables. in join operation we use multiple table name in select statement. to do join operation between table, there must be one common field in tables. 
+there are many types of join. 4 important joins are 
+
+1) equi join
+    equi join means type of join in which select statement will fetch data from both tables only if command field has same value. 
+
+    syntax 
+    select table1alias.fields,table2alias.field from table1 alias, table2 alias where table1alias.fieldname = table2alias.fieldname
+
+
+    fetch customerNumber,customerName and total payment amount 
+
+    select customerNumber,customerName from customers c 
+    select sum(amount) from payments p 
+
+    now join query
+    
+    select c.customerNumber,customerName,sum(amount) from customers c, payments p where c.customerNumber=p.customerNumber group by p.customerNumber
+
+    fetch order's detail and its total amount 
+    select * from orders o 
+    select orderNumber,sum(quantityOrdered*priceEach) 'order total' from orderdetails od group by orderNumber
+
+    select o.*,sum(quantityOrdered*priceEach) 'order total' from orders o, orderdetails od where o.orderNumber=od.orderNumber group by od.orderNumber;
+
+    fetch customerNumber,customerName and his order detail with amount. 
+    select customerNumber,customerName from customers c 
+    select * from orders o 
+    select orderNumber,sum(quantityOrdered*priceEach) 'order total' from orderdetails od group by orderNumber
+
+
+    merge them 
+    select customerName,o.*,sum(quantityOrdered*priceEach) 'order total' from orders o, orderdetails od,customers c where o.orderNumber=od.orderNumber and c.customerNumber=o.customerNumber group by od.orderNumber;
