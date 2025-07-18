@@ -208,3 +208,49 @@ there are many types of join. 4 important joins are
 
     merge them 
     select customerName,o.*,sum(quantityOrdered*priceEach) 'order total' from orders o, orderdetails od,customers c where o.orderNumber=od.orderNumber and c.customerNumber=o.customerNumber group by od.orderNumber;
+
+2) left join
+    left join means type of join in which select statement will fetch all row from left table and only matching row from right table.
+
+    syntax 
+    SELECT column_list FROM left_table LEFT JOIN right_table ON left_table.column_name = right_table.column_name;
+
+    fetch customerNumber,customerName,city,state,country of those customers who has not given any order 
+
+    select customerNumber,customerName,city,state,country from customers 
+    select orderNumber,orderDate from orders    
+
+    now merge them 
+
+    select c.customerNumber,customerName,city,state,country,orderNumber,orderDate from customers c  left join orders o on c.customerNumber = o.customerNumber where orderNumber is null
+ 
+    fetch customerNumber,customerName,city,state,country of those customers who has not given any order in year 2004
+
+    select c.customerNumber,customerName,city,state,country,orderNumber,orderDate from customers c  left join orders o on c.customerNumber = o.customerNumber and orderdate>='2004-01-01' and orderdate<='2004-12-31' where orderNumber is null
+
+
+    fetch customerNumber,customerName of those customers who has not paid in 2003 
+
+    select customerNumber,customerName from customers c
+    select paymentDate,amount from payments p 
+
+    select c.customerNumber,customerName,paymentDate,amount from customers c left join payments p on c.customerNumber = p.customerNumber and paymentDate>='2003-01-01' and paymentDate<='2003-12-31' where amount is null
+
+2) right join
+    right join means type of join in which select statement will fetch all row from right table and only matching row from left table.
+
+    syntax
+    SELECT column_list FROM left_table RIGHT JOIN right_table ON left_table.column_name = right_table.column_name;
+
+
+    example 
+    
+        get detail of those order where customerNumber is fake. 
+
+    steps 
+        select customerNumber,customerName from customers c 
+        select orderNumber,orderDate from orders 
+
+    merge 
+        select c.customerNumber,customerName,orderNumber,orderDate from customers c right join orders o on c.customerNumber=o.customerNumber where c.customerNumber is null
+
