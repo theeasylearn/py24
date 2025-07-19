@@ -254,3 +254,30 @@ there are many types of join. 4 important joins are
     merge 
         select c.customerNumber,customerName,orderNumber,orderDate from customers c right join orders o on c.customerNumber=o.customerNumber where c.customerNumber is null
 
+----------------------------------------------------------------------------------------
+sub query 
+
+when we use select statement inside another select statement, it is called sub query. outer select statement is called out query and inner select statement is called inery query. inner query is used to give result to outer query. there is no fix syntax for sub query. 
+
+findout customerNumber,customerName who has made minimum payment
+
+select p.customerNumber,customerName,amount from payments p, customers c where amount = (
+select min(amount) from payments) and c.customerNumber = p.customerNumber
+
+findout customerNumber of those customers who has never given order 
+
+select DISTINCT customerNumber from orders o order by customerNumber; 
+select customerNumber from customers where customerNumber not in(select DISTINCT customerNumber from orders o order by customerNumber)
+
+findout customerNumber,customerName who has never given payment 
+
+select customerNumber,customerName from customers c 
+select DISTINCT customerNumber from order o 
+
+list of customer who have given order 
+select customerNumber,customerName from customers c where customerNumber in(select DISTINCT customerNumber from orders o)
+
+get list of customers who has given payment 
+select DISTINCT(customerNumber) from payment p order by customerNumber
+
+select customerNumber,customerName from customers c where customerNumber in(select DISTINCT customerNumber from orders o) and  customerNumber not in (select DISTINCT(customerNumber) from payments p order by customerNumber)
