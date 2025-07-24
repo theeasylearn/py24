@@ -1,0 +1,25 @@
+Name : Library (Single Table)
+
+Description:
+A mini system to manage books in your personal library.
+Table: books
+
+Fields:
+- id (INTEGER, PRIMARY KEY, AUTOINCREMENT)
+- title (TEXT)
+- author (TEXT)
+- genre (TEXT)
+- year_published (INTEGER)
+- status (TEXT: owned/Borrowed)
+
+Features:
+- Add, edit, delete books,Display
+
+------------------------------------
+excercise
+------------------------------------
+- Mark books as borrowed or available
+- Search by title 
+- Search by author 
+- Search by genre  
+

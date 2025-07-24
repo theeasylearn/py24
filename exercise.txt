@@ -116,6 +116,15 @@ Create class to accept Player Detail
     average 
     fifty
     centuries
-    fity_rate 
+    fifty_rate 
     century_rate 
     
+create product table which has following fields 
+-----------------------------------------------
+id, name, price, quantity, weight, description, status, create_at
+do following operation, create separate file for each operation 
+    insert, 
+    update,
+    delete,
+    select 
+develop this example in way we develop examples in class 
