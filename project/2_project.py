@@ -1,5 +1,12 @@
 import dbconnection as con
 #menu drive program
+def getBookDetail():
+    title = input("Enter book name")
+    author = input("Enter author name")
+    year_published = int(input("Enter publish year"))
+    genre = input("Enter book genre")
+    status = int(input("book status (1 = owned, 2 = borrowed)"))
+    return title,author,genre,year_published,status 
 print("Press 1 to insert new book")
 print("Press 2 to update book")
 print("Press 3 to delete book")
@@ -13,13 +20,30 @@ while True:
     try:
         choice = int(input("what is your choice"))
         if choice==1:
-            sql = "insert into book (title,author,genre,year_published,ststus) values (%s,%s,%s,%s,%s)"
-            data = ['Rich dad poor dad','Robert','finanace',2000,1]
-            
+            # accept bookname, author, genre, year_published, status from user 
+            tuple = getBookDetail()
+            sql = "insert into books (title,author,genre,year_published,status) values (%s,%s,%s,%s,%s)"
+            data = [tuple[0],tuple[1],tuple[2],tuple[3],tuple[4]]
+            isSuccess = con.RunQuery(sql,data)
+            if isSuccess==True:
+                print("Book inserted successfully")
         elif choice==2:
             print("I will update book")
+            bookid = int(input("Enter book id to update"))
+            tuple = getBookDetail()
+            sql = "update books set title=%s,author=%s,genre=%s,year_published=%s,status=%s where id=%s"
+            data = [tuple[0],tuple[1],tuple[2],tuple[3],tuple[4],bookid]
+            isSuccess = con.RunQuery(sql,data)
+            if isSuccess==True:
+                print("Book updated successfully")
         elif choice==3:
             print("I will delete book")
+            bookid = int(input("Enter book id to delete book"))
+            sql = "delete from books where id=%s"
+            data = [bookid]
+            isSuccess = con.RunQuery(sql,data)
+            if isSuccess==True:
+                print("Book deleted successfully")
         elif choice==4:
             print("I will display all book")
         elif choice==5:

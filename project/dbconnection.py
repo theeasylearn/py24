@@ -24,3 +24,20 @@ except errors.NotSupportedError as err:
 except Exception as e:
     print(f"An unexpected error occurred: {e}")
     # This catches any other exceptions not specifically handled above
+
+#create function to run insert, update, delete sql command
+def RunQuery(sql,data):
+    isSuccess = False
+    try:
+        mycursor = database.cursor()
+        mycursor.execute(sql,data);
+        database.commit()
+        isSuccess = True
+    except errors.ProgrammingError as err:
+        print(sql,data)
+        print(err)
+    except mysql.connector.errors.DataError as err:
+        print(sql,data)
+        print(err)
+    finally:
+        return isSuccess
