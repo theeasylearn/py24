@@ -41,3 +41,11 @@ def RunQuery(sql,data):
         print(err)
     finally:
         return isSuccess
+def fetchTable(sql,data=None):
+    mycursor = database.cursor(dictionary=True)
+    if data==None:
+        mycursor.execute(sql)
+    else:
+        mycursor.execute(sql,data)
+    tables = mycursor.fetchall()
+    return tables
